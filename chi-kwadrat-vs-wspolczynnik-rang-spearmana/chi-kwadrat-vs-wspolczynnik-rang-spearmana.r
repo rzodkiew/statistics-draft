@@ -45,6 +45,9 @@ dane_ankieta_podsumowanie = table(dane_ankieta_wyniki[,1], dane_ankieta_wyniki[,
 chisq.test(dane_pseudoankieta_podsumowanie, correct=TRUE)
 chisq.test(dane_ankieta_podsumowanie, correct=TRUE)
 
+cor.test(dane_ankieta_wyniki[,1], dane_ankieta_wyniki[,2], method="pearson")
+cor.test(dane_ankieta_wyniki[,1], dane_ankieta_wyniki[,2], method="spearman")
+cor.test(dane_ankieta_wyniki[,1], dane_ankieta_wyniki[,2], method="kendall")
+
 # tetrachoric(dane_pseudoankieta_podsumowanie, correct=TRUE)
 # phi(dane_pseudoankieta_podsumowanie, digits=8)
-
