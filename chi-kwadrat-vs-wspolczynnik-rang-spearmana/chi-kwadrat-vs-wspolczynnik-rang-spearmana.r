@@ -94,7 +94,8 @@ dane_ankieta_wyniki = array(0, c(dane_ankieta_resondenci_liczba, length(dane_ank
 colnames(dane_ankieta_wyniki) = dane_ankieta_pytania
 
 #
-for(i in 1:nrow(dane_ankieta_podsumowanie_kombinacje)) {
+# for(i in 1:nrow(dane_ankieta_podsumowanie_kombinacje)) {
+for(i in 1:100000) {
   for(j in 1:nrow(dane_ankieta_wyniki)) {
     # czy_twoi_rodzice_maja_psa
     dane_ankieta_wyniki[j,1] = j > dane_ankieta_podsumowanie_kombinacje[i,1] + dane_ankieta_podsumowanie_kombinacje[i,2]
@@ -118,10 +119,14 @@ for(i in 1:nrow(dane_ankieta_podsumowanie_kombinacje)) {
   # jesli jeden jest liczba, a inny jest nieliczba
   if (xor(is.nan(dane_ankieta_podsumowanie_phi), is.na(dane_ankieta_wyniki_rho))) {
     print("phi != rho")
+    print(i)
+    print(dane_ankieta_podsumowanie_kombinacje[i,])
   }
   # jesli oba sa liczba i roznia sie
   if (!is.nan(dane_ankieta_podsumowanie_phi) & !is.na(dane_ankieta_wyniki_rho) & dane_ankieta_podsumowanie_phi != dane_ankieta_wyniki_rho) {
     print("phi != rho")
+    print(i)
+    print(dane_ankieta_podsumowanie_kombinacje[i,])
   }
 
   # inne  
